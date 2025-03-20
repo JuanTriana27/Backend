@@ -16,7 +16,10 @@ import lombok.NoArgsConstructor;
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "nombre", nullable = false, length =30)
+    @Column (name = "id_persona", nullable = false, length =30)
+    private Integer idPersona;
+
+    @Column (name = "nombre", length =30)
     private String nombre;
 
     @Column (name = "apellido", nullable = false, length =30)
@@ -36,9 +39,6 @@ public class Persona {
 
     @Column (name = "codigo_postal", length =30)
     private Integer codigo_postal;
-
-    @Column (name = "id_persona", length =30)
-    private Integer idPersona;
 }
 
 
