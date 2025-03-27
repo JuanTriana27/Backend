@@ -1,4 +1,5 @@
 package co.edu.usbcali.inmobiliaria.service.impl;
+
 import co.edu.usbcali.inmobiliaria.model.TipoPropiedad;
 import co.edu.usbcali.inmobiliaria.repository.TipoPropiedadRepository;
 import co.edu.usbcali.inmobiliaria.service.TipoPropiedadService;
