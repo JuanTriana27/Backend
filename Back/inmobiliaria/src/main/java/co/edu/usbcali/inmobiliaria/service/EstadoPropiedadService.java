@@ -4,4 +4,7 @@ import java.util.List;
 
 public interface EstadoPropiedadService {
     List<EstadoPropiedad> getAllEstadoPropiedad();
+
+    // Ottro metodo
+    EstadoPropiedad getEstadoPropiedad(Integer id);
 }

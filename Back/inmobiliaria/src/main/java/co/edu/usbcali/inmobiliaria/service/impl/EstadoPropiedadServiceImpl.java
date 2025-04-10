@@ -15,8 +15,11 @@ public class EstadoPropiedadServiceImpl implements EstadoPropiedadService {
 
     @Override
     public List<EstadoPropiedad> getAllEstadoPropiedad() {
-        List<EstadoPropiedad> listaEstadoPropiedad = estadoPropiedadRepository.findAll();
+        return estadoPropiedadRepository.findAll();
+    }
 
-        return listaEstadoPropiedad;
+    @Override
+    public EstadoPropiedad getEstadoPropiedad(Integer id) {
+        return estadoPropiedadRepository.getReferenceById(id);
     }
 }
