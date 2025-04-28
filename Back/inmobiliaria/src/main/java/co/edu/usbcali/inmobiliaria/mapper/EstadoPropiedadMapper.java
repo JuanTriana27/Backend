@@ -5,9 +5,9 @@ import co.edu.usbcali.inmobiliaria.model.EstadoPropiedad;
 
 public class EstadoPropiedadMapper {
 
-    public static EstadoPropiedadDTO modelToDTO(EstadoPropiedad estadoPropiedad) {
-        /*
-        EstadoPropiedadDTO estadoPropiedadDTO = new EstadoPropiedadDTO();
+    public static EstadoPropiedadDTO modelToDTO(EstadoPropiedad estadoPropiedad){
+        // Forma tradicional
+        /*EstadoPropiedadDTO estadoPropiedadDTO = new EstadoPropiedadDTO();
 
         estadoPropiedadDTO.setNombre(estadoPropiedad.getNombre());
         estadoPropiedadDTO.setDescripcion(estadoPropiedad.getDescripcion());
@@ -19,4 +19,12 @@ public class EstadoPropiedadMapper {
                 .descripcion(estadoPropiedad.getDescripcion())
                 .build();
     }
+
+    public static EstadoPropiedad dtoToModel(EstadoPropiedadDTO estadoPropiedadDTO) {
+        return EstadoPropiedad.builder()
+                .nombre(estadoPropiedadDTO.getNombre())
+                .descripcion(estadoPropiedadDTO.getDescripcion())
+                .build();
+    }
+
 }

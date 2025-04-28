@@ -5,13 +5,18 @@ import co.edu.usbcali.inmobiliaria.model.TipoPropiedad;
 
 public class TipoPropiedadMapper {
 
-    public static TipoPropiedadDTO modelToDTO(TipoPropiedad TipoPropiedad) {
-
+    public static TipoPropiedadDTO modelToDTO(TipoPropiedad tipoPropiedad){
         return TipoPropiedadDTO.builder()
-            .nombre(TipoPropiedad.getNombre())
-            .descripcion(TipoPropiedad.getDescripcion())
-            .build();
-}
-    private String nombre;
-    private String descripcion;
+                .nombre(tipoPropiedad.getNombre())
+                .descripcion(tipoPropiedad.getDescripcion())
+                .build();
+    }
+
+    public static TipoPropiedad dtoToModel(TipoPropiedadDTO tipoPropiedadDTO) {
+        return TipoPropiedad.builder()
+                .nombre(tipoPropiedadDTO.getNombre())
+                .descripcion(tipoPropiedadDTO.getDescripcion())
+                .build();
+    }
+
 }

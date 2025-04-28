@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class TipoPropiedadDTO {
+public class EstadoContratoDTO {
     private String nombre;
     private String descripcion;
 }

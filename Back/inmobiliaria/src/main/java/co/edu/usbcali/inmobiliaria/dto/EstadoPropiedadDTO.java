@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class EstadoPropiedadDTO {
     private String nombre;
     private String descripcion;

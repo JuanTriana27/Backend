@@ -1,5 +1,7 @@
 package co.edu.usbcali.inmobiliaria.service.impl;
 
+import co.edu.usbcali.inmobiliaria.dto.PersonaDTO;
+import co.edu.usbcali.inmobiliaria.mapper.PersonaMapper;
 import co.edu.usbcali.inmobiliaria.model.Persona;
 import co.edu.usbcali.inmobiliaria.repository.PersonaRepository;
 import co.edu.usbcali.inmobiliaria.service.PersonaService;
@@ -15,13 +17,19 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public List<Persona> getAllPersonas() {
-        // Implementacion de este
+        return personaRepository.findAll();
+    }
 
-        // se inicializa la lista de tipos de propiedades
-        // se usa el metodo findAll del repository
-        // para ir a la base de datos y traer todas las personas
-        List<Persona> personas = personaRepository.findAll();
+    @Override
+    public PersonaDTO getPersonaPorId(Integer id) {
 
-        return personas;
+        // Consultar en db las persona por ID
+        Persona persona = personaRepository.getReferenceById(id);
+
+        // Mapear hacia DTO el resultado que trae el modelo
+        PersonaDTO personaDTO = PersonaMapper.modelToDTO(persona);
+
+        // Retornar el objeto mapeado a DTO
+        return personaDTO;
     }
 }
