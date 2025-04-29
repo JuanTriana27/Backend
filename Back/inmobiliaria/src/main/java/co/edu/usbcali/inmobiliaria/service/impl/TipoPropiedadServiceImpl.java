@@ -7,7 +7,6 @@ import co.edu.usbcali.inmobiliaria.repository.TipoPropiedadRepository;
 import co.edu.usbcali.inmobiliaria.service.TipoPropiedadService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service

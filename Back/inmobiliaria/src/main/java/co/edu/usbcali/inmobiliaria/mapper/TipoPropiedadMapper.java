@@ -18,5 +18,4 @@ public class TipoPropiedadMapper {
                 .descripcion(tipoPropiedadDTO.getDescripcion())
                 .build();
     }
-
 }
