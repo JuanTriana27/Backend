@@ -1,15 +1,16 @@
 package co.edu.usbcali.inmobiliaria.controller;
 
 import co.edu.usbcali.inmobiliaria.dto.TipoPropiedadDTO;
+import co.edu.usbcali.inmobiliaria.dto.request.CreatePersonaRequest;
+import co.edu.usbcali.inmobiliaria.dto.request.CreateTipoPropiedadRequest;
+import co.edu.usbcali.inmobiliaria.dto.response.CreatePersonaResponse;
+import co.edu.usbcali.inmobiliaria.dto.response.CreateTipoPropiedadResponse;
 import co.edu.usbcali.inmobiliaria.model.TipoPropiedad;
 import co.edu.usbcali.inmobiliaria.service.TipoPropiedadService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,5 +32,12 @@ public class TipoPropiedadController {
                 tipoPropiedadService.getTipoPropiedadPorId(id),
                 HttpStatus.OK
         );
+    }
+
+    //metodo para guardar un nuevo tipo de propiedad y sera de tipo POST
+    @PostMapping("/guardar-nuevo")
+    public ResponseEntity<CreateTipoPropiedadResponse> guardarNuevo(@RequestBody CreateTipoPropiedadRequest createTipoPropiedadRequest) throws Exception {
+        CreateTipoPropiedadResponse createPersonaResponse = tipoPropiedadService.createTipoPropiedad(createTipoPropiedadRequest);
+        return new ResponseEntity<>(createPersonaResponse, HttpStatus.CREATED);
     }
 }
