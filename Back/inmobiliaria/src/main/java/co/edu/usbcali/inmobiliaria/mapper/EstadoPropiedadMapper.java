@@ -1,6 +1,8 @@
 package co.edu.usbcali.inmobiliaria.mapper;
 
 import co.edu.usbcali.inmobiliaria.dto.EstadoPropiedadDTO;
+import co.edu.usbcali.inmobiliaria.dto.request.CreateEstadoPropiedadRequest;
+import co.edu.usbcali.inmobiliaria.dto.response.CreateEstadoPropiedadResponse;
 import co.edu.usbcali.inmobiliaria.model.EstadoPropiedad;
 
 public class EstadoPropiedadMapper {
@@ -27,4 +29,18 @@ public class EstadoPropiedadMapper {
                 .build();
     }
 
+    public static EstadoPropiedad createRequestToModel(CreateEstadoPropiedadRequest createEstadoPropiedadRequest) {
+        return EstadoPropiedad.builder()
+                .nombre(createEstadoPropiedadRequest.getNombre())
+                .descripcion(createEstadoPropiedadRequest.getDescripcion())
+                .build();
+    }
+
+    public static CreateEstadoPropiedadResponse modelToCreateResponse(EstadoPropiedad estadoPropiedad) {
+        return CreateEstadoPropiedadResponse.builder()
+                .id(estadoPropiedad.getIdEstadoPropiedad())
+                .nombre(estadoPropiedad.getNombre())
+                .descripcion(estadoPropiedad.getDescripcion())
+                .build();
+    }
 }
