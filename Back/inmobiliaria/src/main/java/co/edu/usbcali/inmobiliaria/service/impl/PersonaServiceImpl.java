@@ -80,8 +80,8 @@ public class PersonaServiceImpl implements PersonaService {
         }
 
         // Validar codigo postal
-        if (createPersonaRequest.getCodigo_postal() != null && createPersonaRequest.getCodigo_postal() <= 0) {
-            throw new Exception("Si se proporciona, el código postal debe ser mayor a cero");
+        if (createPersonaRequest.getCodigo_postal() == null || createPersonaRequest.getCodigo_postal() <= 0) {
+            throw new Exception("El código postal no puede ser nulo o menor o igual a cero");
         }
 
         // Convertir de Request a Model

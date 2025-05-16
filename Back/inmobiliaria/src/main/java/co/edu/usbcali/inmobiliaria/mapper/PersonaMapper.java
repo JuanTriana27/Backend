@@ -38,6 +38,7 @@ public class PersonaMapper {
                 .email(createPersonaRequest.getEmail())
                 .direccion(createPersonaRequest.getDireccion())
                 .ciudad(createPersonaRequest.getCiudad())
+                .codigo_postal(createPersonaRequest.getCodigo_postal())
                 .build();
     }
 
@@ -49,6 +50,7 @@ public class PersonaMapper {
                 .email(persona.getEmail())
                 .direccion(persona.getDireccion())
                 .ciudad(persona.getCiudad())
+                .codigo_postal(persona.getCodigo_postal())
                 .build();
     }
 
