@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreatePropiedadRequest {
-    private Integer idPropiedad;
     private String direccion;
     private String ciudad;
     private String codigoPostal;
@@ -19,9 +18,8 @@ public class CreatePropiedadRequest {
     private Integer habitaciones;
     private Integer banos;
     private Double precio;
-    private LocalDateTime fechaCreacion;
 
-    // Llaves foráneas (solo el ID o puedes extenderlo con info adicional)
+    // Relaciones
     private Integer idPropietario;
     private Integer idAsesor;
     private Integer idTipoPropiedad;

@@ -19,12 +19,13 @@ public class PropiedadController {
 
     private final PropiedadService propiedadService;
 
-    // Tus endpoints existentes (GETs)
+    // Obtener todos los datos (GET)
     @GetMapping("/todos")
     public List<Propiedad> obtenerTodasLasPropiedades(){
         return propiedadService.getAllPropiedad();
     }
 
+    // Obtener los datos por su ID (GET)
     @GetMapping("/buscar-por-id/{id}")
     public ResponseEntity<PropiedadDTO> buscarPorId(@PathVariable Integer id){
         PropiedadDTO propiedadDTO = propiedadService.getPropiedadPorId(id);

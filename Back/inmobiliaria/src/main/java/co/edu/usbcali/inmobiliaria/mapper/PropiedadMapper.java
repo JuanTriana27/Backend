@@ -8,6 +8,9 @@ import co.edu.usbcali.inmobiliaria.model.Persona;
 import co.edu.usbcali.inmobiliaria.model.Propiedad;
 import co.edu.usbcali.inmobiliaria.model.TipoPropiedad;
 
+import java.security.Timestamp;
+import java.time.LocalDateTime;
+
 public class PropiedadMapper {
 
     public static PropiedadDTO modelToDTO(Propiedad propiedad) {
@@ -45,25 +48,22 @@ public class PropiedadMapper {
                 .build();
     }
 
-    public static Propiedad createRequestToModel(CreatePropiedadRequest request) {
+    public static Propiedad createRequestToModel(CreatePropiedadRequest createPropiedadRequest) {
         return Propiedad.builder()
-                .direccion(request.getDireccion())
-                .ciudad(request.getCiudad())
-                .codigoPostal(request.getCodigoPostal())
-                .metrosCuadrados(request.getMetrosCuadrados())
-                .habitaciones(request.getHabitaciones())
-                .banos(request.getBanos())
-                .precio(request.getPrecio())
-                .fechaCreacion(request.getFechaCreacion())
-                .propietario(request.getIdPropietario() != null ? Persona.builder().idPersona(request.getIdPropietario()).build() : null)
-                .asesor(request.getIdAsesor() != null ? Persona.builder().idPersona(request.getIdAsesor()).build() : null)
-                .tipoPropiedad(request.getIdTipoPropiedad() != null ? TipoPropiedad.builder().idTipoPropiedad(request.getIdTipoPropiedad()).build() : null)
-                .estadoPropiedad(request.getIdEstadoPropiedad() != null ? EstadoPropiedad.builder().idEstadoPropiedad(request.getIdEstadoPropiedad()).build() : null)
+                .direccion(createPropiedadRequest.getDireccion())
+                .ciudad(createPropiedadRequest.getCiudad())
+                .codigoPostal(createPropiedadRequest.getCodigoPostal())
+                .metrosCuadrados(createPropiedadRequest.getMetrosCuadrados())
+                .habitaciones(createPropiedadRequest.getHabitaciones())
+                .banos(createPropiedadRequest.getBanos())
+                .precio(createPropiedadRequest.getPrecio())
+                .fechaCreacion(LocalDateTime.now())
                 .build();
     }
 
     public static CreatePropiedadResponse modelToCreateResponse(Propiedad propiedad) {
         return CreatePropiedadResponse.builder()
+                .idPropiedad(propiedad.getIdPropiedad())
                 .direccion(propiedad.getDireccion())
                 .ciudad(propiedad.getCiudad())
                 .codigoPostal(propiedad.getCodigoPostal())
@@ -72,10 +72,19 @@ public class PropiedadMapper {
                 .banos(propiedad.getBanos())
                 .precio(propiedad.getPrecio())
                 .fechaCreacion(propiedad.getFechaCreacion())
-                .idPropietario(propiedad.getPropietario() != null ? propiedad.getPropietario().getIdPersona() : null)
-                .idAsesor(propiedad.getAsesor() != null ? propiedad.getAsesor().getIdPersona() : null)
-                .idTipoPropiedad(propiedad.getTipoPropiedad() != null ? propiedad.getTipoPropiedad().getIdTipoPropiedad() : null)
-                .idEstadoPropiedad(propiedad.getEstadoPropiedad() != null ? propiedad.getEstadoPropiedad().getIdEstadoPropiedad() : null)
+                .nombrePropietario(
+                        propiedad.getPropietario() == null ? null :
+                                propiedad.getPropietario().getNombre() + " " + propiedad.getPropietario().getApellido())
+                .nombreAsesor(
+                        propiedad.getAsesor() == null ? null :
+                                propiedad.getAsesor().getNombre() + " " + propiedad.getAsesor().getApellido())
+                .tipoPropiedad(
+                        propiedad.getTipoPropiedad() == null ? null :
+                                propiedad.getTipoPropiedad().getNombre())
+                .estadoPropiedad(
+                        propiedad.getEstadoPropiedad() == null ? null :
+                                propiedad.getEstadoPropiedad().getNombre())
                 .build();
     }
+
 }
