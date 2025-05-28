@@ -1,9 +1,7 @@
 package co.edu.usbcali.inmobiliaria.controller;
 
 import co.edu.usbcali.inmobiliaria.dto.TipoPropiedadDTO;
-import co.edu.usbcali.inmobiliaria.dto.request.CreatePersonaRequest;
 import co.edu.usbcali.inmobiliaria.dto.request.CreateTipoPropiedadRequest;
-import co.edu.usbcali.inmobiliaria.dto.response.CreatePersonaResponse;
 import co.edu.usbcali.inmobiliaria.dto.response.CreateTipoPropiedadResponse;
 import co.edu.usbcali.inmobiliaria.model.TipoPropiedad;
 import co.edu.usbcali.inmobiliaria.service.TipoPropiedadService;

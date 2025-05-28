@@ -103,7 +103,7 @@ public class PropiedadServiceImpl implements PropiedadService {
         propiedad.setAsesor(asesor);
         propiedad.setTipoPropiedad(tipoPropiedad);
         propiedad.setEstadoPropiedad(estadoPropiedad);
-        propiedad.setFechaCreacion(LocalDateTime.now()); // Fecha generada automáticamente
+        propiedad.setFechaCreacion(LocalDateTime.now());
 
         // Guardar en base de datos
         propiedad = propiedadRepository.save(propiedad);

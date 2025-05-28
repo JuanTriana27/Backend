@@ -1,4 +1,5 @@
 package co.edu.usbcali.inmobiliaria.service;
+
 import co.edu.usbcali.inmobiliaria.dto.EstadoPropiedadDTO;
 import co.edu.usbcali.inmobiliaria.dto.request.CreateEstadoPropiedadRequest;
 import co.edu.usbcali.inmobiliaria.dto.response.CreateEstadoPropiedadResponse;

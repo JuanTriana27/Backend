@@ -7,8 +7,6 @@ import co.edu.usbcali.inmobiliaria.model.EstadoPropiedad;
 import co.edu.usbcali.inmobiliaria.model.Persona;
 import co.edu.usbcali.inmobiliaria.model.Propiedad;
 import co.edu.usbcali.inmobiliaria.model.TipoPropiedad;
-
-import java.security.Timestamp;
 import java.time.LocalDateTime;
 
 public class PropiedadMapper {

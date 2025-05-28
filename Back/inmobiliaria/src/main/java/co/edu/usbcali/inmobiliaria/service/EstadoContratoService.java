@@ -1,4 +1,5 @@
 package co.edu.usbcali.inmobiliaria.service;
+
 import co.edu.usbcali.inmobiliaria.dto.EstadoContratoDTO;
 import co.edu.usbcali.inmobiliaria.model.EstadoContrato;
 import java.util.List;
