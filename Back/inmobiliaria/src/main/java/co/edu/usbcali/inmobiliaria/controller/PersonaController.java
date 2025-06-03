@@ -3,7 +3,6 @@ package co.edu.usbcali.inmobiliaria.controller;
 import co.edu.usbcali.inmobiliaria.dto.MessageResponse;
 import co.edu.usbcali.inmobiliaria.dto.PersonaDTO;
 import co.edu.usbcali.inmobiliaria.dto.request.CreatePersonaRequest;
-import co.edu.usbcali.inmobiliaria.dto.request.CreatePropiedadRequest;
 import co.edu.usbcali.inmobiliaria.dto.response.CreatePersonaResponse;
 import co.edu.usbcali.inmobiliaria.model.Persona;
 import co.edu.usbcali.inmobiliaria.service.PersonaService;
@@ -13,6 +12,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+// Peticiones desde front
+@CrossOrigin(origins = "http://localhost:3000")
 
 @RestController
 @RequestMapping("persona")

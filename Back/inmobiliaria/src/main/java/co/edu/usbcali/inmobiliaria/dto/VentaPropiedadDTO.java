@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class VentaPropiedadDTO {
+    private Integer id;
     private LocalDateTime fecha_venta;
     private Double precio_venta;
     private Double comision_asesor;

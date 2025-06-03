@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+// Peticiones desde front
+@CrossOrigin(origins = "http://localhost:3000")
+
 @RestController
 @RequestMapping("propiedad")
 @RequiredArgsConstructor
