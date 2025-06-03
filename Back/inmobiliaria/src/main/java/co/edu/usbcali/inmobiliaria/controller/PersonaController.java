@@ -1,7 +1,9 @@
 package co.edu.usbcali.inmobiliaria.controller;
 
+import co.edu.usbcali.inmobiliaria.dto.MessageResponse;
 import co.edu.usbcali.inmobiliaria.dto.PersonaDTO;
 import co.edu.usbcali.inmobiliaria.dto.request.CreatePersonaRequest;
+import co.edu.usbcali.inmobiliaria.dto.request.CreatePropiedadRequest;
 import co.edu.usbcali.inmobiliaria.dto.response.CreatePersonaResponse;
 import co.edu.usbcali.inmobiliaria.model.Persona;
 import co.edu.usbcali.inmobiliaria.service.PersonaService;
@@ -36,5 +38,30 @@ public class PersonaController {
     public ResponseEntity<CreatePersonaResponse> guardarNuevo(@RequestBody CreatePersonaRequest createPersonaRequest) throws Exception {
         CreatePersonaResponse createPersonaResponse = personaService.createPersona(createPersonaRequest);
         return new ResponseEntity<>(createPersonaResponse, HttpStatus.CREATED);
+    }
+
+    // Endpoint para actualizar por id
+    @PutMapping("/update/{id}")
+    public ResponseEntity<CreatePersonaResponse> persona(
+            @PathVariable Integer id,
+            @RequestBody CreatePersonaRequest createPersonaRequest){
+
+        // Bloque try
+        try{
+            CreatePersonaResponse response = personaService.updatePersona(id, createPersonaRequest);
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<MessageResponse> deletePersona(@PathVariable Integer id) {
+        try {
+            personaService.deletePersona(id);
+            return new ResponseEntity<>(new MessageResponse("Eliminado correctamente"), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new MessageResponse(e.getMessage()), HttpStatus.NOT_FOUND);
+        }
     }
 }

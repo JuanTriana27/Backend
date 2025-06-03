@@ -13,5 +13,6 @@ public interface PersonaService {
     PersonaDTO getPersonaPorId(Integer id);
 
     CreatePersonaResponse createPersona(CreatePersonaRequest createPersonaRequest) throws Exception;
-
+    CreatePersonaResponse updatePersona(Integer id, CreatePersonaRequest createPersonaRequest) throws Exception;
+    void deletePersona(Integer id) throws Exception;
 }

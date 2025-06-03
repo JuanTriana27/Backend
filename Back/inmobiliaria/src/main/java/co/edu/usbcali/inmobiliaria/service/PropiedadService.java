@@ -11,4 +11,6 @@ public interface PropiedadService {
     PropiedadDTO getPropiedadPorId(Integer id);
 
     CreatePropiedadResponse createPropiedad(CreatePropiedadRequest createPropiedadRequest) throws Exception;
+    CreatePropiedadResponse updatePropiedad(Integer id, CreatePropiedadRequest createPropiedadRequest) throws Exception;
+    void deletePropiedad(Integer id) throws Exception;
 }
